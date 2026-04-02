@@ -1,0 +1,75 @@
+name: Feature Request
+description: Propose a new feature or enhancement for CorIM Builder
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request
+        Describe the feature clearly so Archon can plan and implement it.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What feature do you want? Why is it needed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: user_story
+    attributes:
+      label: User Story
+      description: Who benefits and how?
+      placeholder: "As a [role], I want [capability] so that [benefit]"
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: Specific technical or functional requirements
+      placeholder: |
+        - Must support ...
+        - Should integrate with ...
+        - Performance target: ...
+
+  - type: textarea
+    id: affected_files
+    attributes:
+      label: Affected Files / Components
+      description: If known, list the files or areas that need changes
+      placeholder: |
+        - 3cors-corim/frontend/shell/src/...
+        - 3cors-corim/backend/app/...
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How can we verify the feature works correctly?
+      placeholder: |
+        - [ ] Feature is accessible from ...
+        - [ ] Data is persisted correctly
+        - [ ] Tests cover the new functionality
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Frontend
+        - Backend
+        - Database
+        - Infrastructure
+        - Full Stack
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Mockups, references, related issues, or architectural notes

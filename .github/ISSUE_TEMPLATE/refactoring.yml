@@ -1,0 +1,55 @@
+name: Refactoring
+description: Code quality, performance, or architecture improvement
+labels: ["refactor"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Refactoring
+        Describe the improvement and why it matters.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What needs to be refactored and why?
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_state
+    attributes:
+      label: Current State
+      description: What does the code look like now? What's wrong with it?
+      placeholder: |
+        - File X is 800 lines with mixed concerns
+        - Function Y duplicates logic from Z
+
+  - type: textarea
+    id: desired_state
+    attributes:
+      label: Desired State
+      description: What should it look like after refactoring?
+      placeholder: |
+        - Split into separate modules for ...
+        - Extract shared logic into ...
+
+  - type: textarea
+    id: affected_files
+    attributes:
+      label: Affected Files
+      description: List the files that need changes
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How to verify the refactoring is correct?
+      placeholder: |
+        - [ ] All existing tests still pass
+        - [ ] No behavior changes
+        - [ ] Code meets project limits (500 lines/file, 50 lines/function)
+    validations:
+      required: true

@@ -1,0 +1,76 @@
+name: Bug Report
+description: Report a bug in CorIM Builder
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report
+        Please provide enough detail for Archon to reproduce and fix the issue.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect to happen?
+      placeholder: "When I click X, Y happens instead of Z"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Step-by-step instructions to reproduce the bug
+      placeholder: |
+        1. Navigate to ...
+        2. Click on ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected_files
+    attributes:
+      label: Affected Files / Components
+      description: If known, list the files, components, or services involved
+      placeholder: |
+        - 3cors-corim/frontend/shell/src/components/...
+        - 3cors-corim/backend/app/routes/...
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How can we verify the fix is correct?
+      placeholder: |
+        - [ ] Bug no longer occurs when following the reproduction steps
+        - [ ] Existing tests still pass
+        - [ ] New test covers the regression
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Frontend
+        - Backend
+        - Database
+        - Infrastructure
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Screenshots, logs, error messages, or any other relevant info
