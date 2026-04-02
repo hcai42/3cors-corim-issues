@@ -2,7 +2,7 @@
 
 This is the **public issue tracker** for the [3cors CorIM Builder](https://github.com/hcai42/3cors-corim). Use this repository to report bugs, request features, or suggest improvements.
 
-> **Note:** This repository contains only issues — no source code. All code changes are implemented in the [hcai42/3cors-corim](https://github.com/hcai42/3cors-corim) repository.
+> **Note:** This repository contains only issues — no source code.
 
 ---
 
@@ -50,7 +50,7 @@ A well-written issue contains:
 
 ## Automated Issue Processing
 
-Issues in this repository can be automatically processed by our AI coding agent [Archon](https://github.com/hcai42/remote-coding-agent). When an issue is well-structured, a maintainer can trigger Archon to analyze, plan, implement, and create a pull request — all in the [hcai42/3cors-corim](https://github.com/hcai42/3cors-corim) code repository.
+Issues in this repository can be automatically processed by our AI coding agent. When an issue is well-structured, a maintainer can trigger Archon to analyze, plan, implement, and create a pull request code repository.
 
 This is why structured, detailed issues matter: they enable faster, higher-quality automated resolution.
 
@@ -79,4 +79,4 @@ This is why structured, detailed issues matter: they enable faster, higher-quali
 | Repository | Description |
 |---|---|
 | [hcai42/3cors-corim](https://github.com/hcai42/3cors-corim) | CorIM Builder source code (where fixes and features land) |
-| [hcai42/remote-coding-agent](https://github.com/hcai42/remote-coding-agent) | Archon — AI workflow engine for automated development |
+| [hcai42/remote-coding-agent](https://github.com/hcai42/remote-coding-agent) | AI workflow engine for automated development |
