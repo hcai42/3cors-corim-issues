@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: CorIM Builder Source Code
+    url: https://github.com/hcai42/3cors-corim
+    about: The source code repository where all fixes and features are implemented.
+  - name: General Questions / Discussions
+    url: https://github.com/hcai42/3cors-corim-issues/discussions
+    about: Ask questions or start a discussion instead of filing an issue.

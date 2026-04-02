@@ -5,15 +5,16 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Bug Report
-        Please provide enough detail for Archon to reproduce and fix the issue.
+        Thanks for taking the time to report a bug. Please fill out the sections below as completely as possible — the more detail you provide, the faster the issue can be resolved.
+
+        > All fixes are implemented in [hcai42/3cors-corim](https://github.com/hcai42/3cors-corim), not in this repository.
 
   - type: textarea
     id: description
     attributes:
-      label: Description
-      description: What happened? What did you expect to happen?
-      placeholder: "When I click X, Y happens instead of Z"
+      label: What happened?
+      description: A clear and concise description of the bug.
+      placeholder: "When I click 'Save' on the compliance form, the page shows a spinner that never stops, and the data is not saved."
     validations:
       required: true
 
@@ -21,11 +22,13 @@ body:
     id: steps
     attributes:
       label: Steps to Reproduce
-      description: Step-by-step instructions to reproduce the bug
+      description: Exact steps to reproduce the behavior. Be as specific as possible.
       placeholder: |
-        1. Navigate to ...
-        2. Click on ...
-        3. Observe ...
+        1. Log in as a compliance officer
+        2. Navigate to 'CorIM Builder > New Assessment'
+        3. Fill in all required fields
+        4. Click 'Save'
+        5. Observe: spinner appears and never resolves
     validations:
       required: true
 
@@ -34,43 +37,68 @@ body:
     attributes:
       label: Expected Behavior
       description: What should happen instead?
+      placeholder: "The form should save successfully and redirect to the assessment overview with a confirmation message."
+    validations:
+      required: true
+
+  - type: textarea
+    id: error_output
+    attributes:
+      label: Error Messages / Logs
+      description: Paste any error messages from the browser console, network tab, or server logs. Use code blocks for readability.
+      placeholder: |
+        ```
+        POST /api/assessments 500 Internal Server Error
+        {"detail": "column 'risk_score' cannot be null"}
+        ```
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected Component
+      options:
+        - Frontend (UI / React)
+        - Backend (API / Python)
+        - Database (Schema / Queries)
+        - Infrastructure (Docker / Deployment)
+        - Other / Unknown
     validations:
       required: true
 
   - type: textarea
     id: affected_files
     attributes:
-      label: Affected Files / Components
-      description: If known, list the files, components, or services involved
+      label: Affected Files / Components (if known)
+      description: If you know which files or modules are involved, list them here. This significantly speeds up the fix.
       placeholder: |
-        - 3cors-corim/frontend/shell/src/components/...
-        - 3cors-corim/backend/app/routes/...
+        - 3cors-corim/frontend/shell/src/components/AssessmentForm.tsx
+        - 3cors-corim/backend/app/routes/assessments.py
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, OS, device, or deployment info if relevant.
+      placeholder: |
+        - Browser: Chrome 124 on Windows 11
+        - Deployment: Docker (production)
+        - URL: https://corimd.hcai42.com
 
   - type: textarea
     id: acceptance_criteria
     attributes:
       label: Acceptance Criteria
-      description: How can we verify the fix is correct?
+      description: How can we verify the fix is correct? A checklist of conditions.
       placeholder: |
-        - [ ] Bug no longer occurs when following the reproduction steps
+        - [ ] The form saves successfully without errors
+        - [ ] The data appears correctly in the assessment overview
         - [ ] Existing tests still pass
-        - [ ] New test covers the regression
-
-  - type: dropdown
-    id: component
-    attributes:
-      label: Component
-      options:
-        - Frontend
-        - Backend
-        - Database
-        - Infrastructure
-        - Other
+        - [ ] A new test covers this regression
     validations:
       required: true
 
   - type: textarea
-    id: context
+    id: screenshots
     attributes:
-      label: Additional Context
-      description: Screenshots, logs, error messages, or any other relevant info
+      label: Screenshots / Recordings
+      description: If applicable, add screenshots or screen recordings to illustrate the problem.

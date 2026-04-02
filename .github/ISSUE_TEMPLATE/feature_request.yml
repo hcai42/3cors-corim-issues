@@ -5,14 +5,16 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Feature Request
-        Describe the feature clearly so Archon can plan and implement it.
+        Have an idea for a new feature or improvement? Please describe it below so we can understand the need and plan the implementation.
+
+        > All code changes are implemented in [hcai42/3cors-corim](https://github.com/hcai42/3cors-corim), not in this repository.
 
   - type: textarea
-    id: description
+    id: problem
     attributes:
-      label: Description
-      description: What feature do you want? Why is it needed?
+      label: Problem Statement
+      description: What problem does this feature solve? Why is it needed?
+      placeholder: "Currently, compliance officers have to manually export assessment data to Excel for reporting. This is time-consuming and error-prone."
     validations:
       required: true
 
@@ -20,56 +22,77 @@ body:
     id: user_story
     attributes:
       label: User Story
-      description: Who benefits and how?
-      placeholder: "As a [role], I want [capability] so that [benefit]"
+      description: Who benefits from this feature and how?
+      placeholder: "As a compliance officer, I want to generate PDF reports directly from the assessment view so that I can share results with auditors without manual data handling."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: How do you envision this feature working? Describe the user flow or behavior.
+      placeholder: |
+        1. User opens an assessment
+        2. Clicks 'Export as PDF' button in the toolbar
+        3. A PDF with all assessment data, risk scores, and recommendations is generated
+        4. PDF downloads automatically
+    validations:
+      required: true
 
   - type: textarea
     id: requirements
     attributes:
       label: Requirements
-      description: Specific technical or functional requirements
+      description: Specific functional or technical requirements. What is in scope, what is not?
       placeholder: |
-        - Must support ...
-        - Should integrate with ...
-        - Performance target: ...
+        In scope:
+        - PDF export with company branding
+        - Include all assessment sections and risk matrix
 
-  - type: textarea
-    id: affected_files
-    attributes:
-      label: Affected Files / Components
-      description: If known, list the files or areas that need changes
-      placeholder: |
-        - 3cors-corim/frontend/shell/src/...
-        - 3cors-corim/backend/app/...
-
-  - type: textarea
-    id: acceptance_criteria
-    attributes:
-      label: Acceptance Criteria
-      description: How can we verify the feature works correctly?
-      placeholder: |
-        - [ ] Feature is accessible from ...
-        - [ ] Data is persisted correctly
-        - [ ] Tests cover the new functionality
-    validations:
-      required: true
+        Out of scope:
+        - Excel export (separate issue)
+        - Batch export of multiple assessments
 
   - type: dropdown
     id: component
     attributes:
-      label: Component
+      label: Primary Component
       options:
-        - Frontend
-        - Backend
-        - Database
-        - Infrastructure
-        - Full Stack
+        - Frontend (UI / React)
+        - Backend (API / Python)
+        - Database (Schema / Queries)
+        - Infrastructure (Docker / Deployment)
+        - Full Stack (Frontend + Backend)
         - Other
     validations:
       required: true
 
   - type: textarea
-    id: context
+    id: affected_files
     attributes:
-      label: Additional Context
-      description: Mockups, references, related issues, or architectural notes
+      label: Affected Files / Components (if known)
+      description: If you know which parts of the codebase are involved, list them here.
+      placeholder: |
+        - 3cors-corim/frontend/shell/src/views/AssessmentDetail.tsx (add export button)
+        - 3cors-corim/backend/app/routes/reports.py (new endpoint)
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: A checklist of conditions that confirm the feature is complete and working.
+      placeholder: |
+        - [ ] Export button is visible on the assessment detail page
+        - [ ] PDF contains all assessment sections
+        - [ ] PDF renders correctly in Chrome, Firefox, and Safari
+        - [ ] Endpoint is protected by authentication
+        - [ ] Tests cover the new functionality
+    validations:
+      required: true
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups / Examples / References
+      description: Attach mockups, wireframes, or link to examples that illustrate the desired result.
