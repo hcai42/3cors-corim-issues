@@ -1,6 +1,6 @@
 # 3cors CorIM Builder — Public Issue Tracker
 
-This is the **public issue tracker** for the [3cors CorIM Builder](https://github.com/hcai42/3cors-corim). Use this repository to report bugs, request features, or suggest improvements.
+This is the **public issue tracker** for the **3cors CorIM Builder**. Use this repository to report bugs, request features, or suggest improvements.
 
 > **Note:** This repository contains only issues — no source code.
 
